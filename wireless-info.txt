@@ -1,0 +1,1044 @@
+
+########## wireless info START ##########
+
+Report from: 01 Jun 2021 10:32 SAST +0200
+
+Booted last: 01 Jun 2021 00:00 SAST +0200
+
+Script from: 25 Jan 2020 03:34 UTC +0000
+
+##### release ###########################
+
+Distributor ID:	Linuxmint
+Description:	Linux Mint 20.1
+Release:	20.1
+Codename:	ulyssa
+
+##### kernel ############################
+
+Linux 5.4.0-58-generic #64-Ubuntu SMP Wed Dec 9 08:16:25 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+
+Parameters: ro, quiet, splash
+
+##### desktop ###########################
+
+Cinnamon
+
+##### lspci #############################
+
+03:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 15)
+	Subsystem: ASUSTeK Computer Inc. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [1043:8677]
+	Kernel driver in use: r8169
+
+##### lsusb #############################
+
+Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+Bus 001 Device 031: ID 046d:c05b Logitech, Inc. M-U0004 810-001317 [B110 Optical USB Mouse]
+Bus 001 Device 002: ID 17ef:602d Lenovo Lenovo Black Silk USB Keyboard
+Bus 001 Device 030: ID 148f:3070 Ralink Technology, Corp. RT2870/RT3070 Wireless Adapter
+Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+##### PCMCIA card info ##################
+
+##### rfkill ############################
+
+0: phy0: Wireless LAN
+	Soft blocked: no
+	Hard blocked: no
+
+##### secure boot #######################
+
+'mokutil' is not installed (package "mokutil").
+
+##### lsmod #############################
+
+rt2800usb              32768  0
+rt2x00usb              24576  1 rt2800usb
+rt2800lib             131072  1 rt2800usb
+rt2x00lib              61440  3 rt2800usb,rt2x00usb,rt2800lib
+mac80211              843776  3 rt2x00lib,rt2x00usb,rt2800lib
+cfg80211              704512  2 rt2x00lib,mac80211
+libarc4                16384  1 mac80211
+eeepc_wmi              16384  0
+asus_wmi               32768  1 eeepc_wmi
+sparse_keymap          16384  1 asus_wmi
+wmi_bmof               16384  0
+wmi                    32768  2 asus_wmi,wmi_bmof
+video                  49152  2 asus_wmi,i915
+
+##### interfaces ########################
+
+[/etc/network/interfaces]
+source-directory /etc/network/interfaces.d
+
+##### ifconfig ##########################
+
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback <MAC address> brd <MAC address>
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp3s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc fq_codel state DOWN group default qlen 1000
+    link/ether <MAC 'enp3s0' [IF1]> brd <MAC address>
+3: br-0d46577a924e: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether <MAC 'br-0d46577a924e' [IF2]> brd <MAC address>
+    inet 172.19.0.1/16 brd 172.19.255.255 scope global br-0d46577a924e
+       valid_lft forever preferred_lft forever
+4: br-251040d8dec2: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether <MAC 'br-251040d8dec2' [IF3]> brd <MAC address>
+    inet 172.21.0.1/16 brd 172.21.255.255 scope global br-251040d8dec2
+       valid_lft forever preferred_lft forever
+5: br-7f3a9eb1e079: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether <MAC 'br-7f3a9eb1e079' [IF4]> brd <MAC address>
+    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-7f3a9eb1e079
+       valid_lft forever preferred_lft forever
+6: br-95d06e0a912e: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether <MAC 'br-95d06e0a912e' [IF5]> brd <MAC address>
+    inet 172.20.0.1/16 brd 172.20.255.255 scope global br-95d06e0a912e
+       valid_lft forever preferred_lft forever
+7: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether <MAC 'docker0' [IF6]> brd <MAC address>
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+8: wlx<IF from MAC [IF7]>: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether <MAC 'wlx<IF from MAC [IF7]>' [IF7]> brd <MAC address>
+    inet 192.168.8.115/24 brd 192.168.8.255 scope global dynamic noprefixroute wlx<IF from MAC [IF7]>
+       valid_lft 86190sec preferred_lft 86190sec
+    inet6 fde2:73b8:1936:d100:2537:972c:e3c1:bb19/64 scope global temporary dynamic 
+       valid_lft 6992sec preferred_lft 3392sec
+    inet6 fde2:73b8:1936:d100:1138:fd22:2e0b:2f11/64 scope global dynamic mngtmpaddr noprefixroute 
+       valid_lft 6992sec preferred_lft 3392sec
+    inet6 fe80::9ad:b8f5:2b61:c846/64 scope link noprefixroute 
+       valid_lft forever preferred_lft forever
+
+##### iwconfig ##########################
+
+enp3s0    no wireless extensions.
+
+br-95d06e0a912e  no wireless extensions.
+
+br-7f3a9eb1e079  no wireless extensions.
+
+docker0   no wireless extensions.
+
+br-251040d8dec2  no wireless extensions.
+
+lo        no wireless extensions.
+
+br-0d46577a924e  no wireless extensions.
+
+wlx<IF from MAC [IF7]>  IEEE 802.11  ESSID:"Laptech"  
+          Mode:Managed  Frequency:2.432 GHz  Access Point: <MAC 'Laptech' [AC1]>   
+          Bit Rate=135 Mb/s   Tx-Power=20 dBm   
+          Retry short  long limit:2   RTS thr:off   Fragment thr:off
+          Power Management:on
+          Link Quality=63/70  Signal level=-47 dBm  
+          Rx invalid nwid:0  Rx invalid crypt:0  Rx invalid frag:0
+          Tx excessive retries:8  Invalid misc:387   Missed beacon:0
+
+##### route #############################
+
+default via 192.168.8.1 dev wlx<IF from MAC [IF7]> proto dhcp metric 600 
+169.254.0.0/16 dev br-0d46577a924e scope link metric 1000 linkdown 
+172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+172.18.0.0/16 dev br-7f3a9eb1e079 proto kernel scope link src 172.18.0.1 linkdown 
+172.19.0.0/16 dev br-0d46577a924e proto kernel scope link src 172.19.0.1 linkdown 
+172.20.0.0/16 dev br-95d06e0a912e proto kernel scope link src 172.20.0.1 linkdown 
+172.21.0.0/16 dev br-251040d8dec2 proto kernel scope link src 172.21.0.1 linkdown 
+192.168.8.0/24 dev wlx<IF from MAC [IF7]> proto kernel scope link src 192.168.8.115 metric 600 
+
+##### resolv.conf #######################
+
+[777 root '/etc/resolv.conf' -> '../run/systemd/resolve/stub-resolv.conf']
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+
+##### network managers ##################
+
+Installed:
+
+	NetworkManager
+
+Running:
+
+root         739       1  0 10:11 ?        00:00:00 /usr/sbin/NetworkManager --no-daemon
+
+##### NetworkManager info ###############
+
+GENERAL.DEVICE:                         wlx<IF from MAC [IF7]>
+GENERAL.TYPE:                           wifi
+GENERAL.NM-TYPE:                        NMDeviceWifi
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/8
+GENERAL.VENDOR:                         Ralink Technology, Corp.
+GENERAL.PRODUCT:                        RT2870/RT3070 Wireless Adapter
+GENERAL.DRIVER:                         rt2800usb
+GENERAL.DRIVER-VERSION:                 5.4.0-58-generic
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         <MAC 'wlx<IF from MAC [IF7]>' [IF7]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.REASON:                         0 (No reason given)
+GENERAL.IP4-CONNECTIVITY:               4 (full)
+GENERAL.IP6-CONNECTIVITY:               3 (limited)
+GENERAL.UDI:                            /sys/devices/pci0000:00/0000:00:14.0/usb1/1-2/1-2:1.0/net/wlx<IF from MAC [IF7]>
+GENERAL.IP-IFACE:                       wlx<IF from MAC [IF7]>
+GENERAL.IS-SOFTWARE:                    no
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     Auto Laptech
+GENERAL.CON-UUID:                       c78a6e1d-702e-466a-9d90-405e1832187b
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/6
+GENERAL.METERED:                        no (guessed)
+CAPABILITIES.CARRIER-DETECT:            no
+CAPABILITIES.SPEED:                     135 Mb/s
+CAPABILITIES.IS-SOFTWARE:               no
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     yes
+INTERFACE-FLAGS.LOWER-UP:               yes
+INTERFACE-FLAGS.CARRIER:                yes
+WIFI-PROPERTIES.WEP:                    yes
+WIFI-PROPERTIES.WPA:                    yes
+WIFI-PROPERTIES.WPA2:                   yes
+WIFI-PROPERTIES.TKIP:                   yes
+WIFI-PROPERTIES.CCMP:                   yes
+WIFI-PROPERTIES.AP:                     yes
+WIFI-PROPERTIES.ADHOC:                  yes
+WIFI-PROPERTIES.2GHZ:                   yes
+WIFI-PROPERTIES.5GHZ:                   no
+WIFI-PROPERTIES.MESH:                   yes
+WIFI-PROPERTIES.IBSS-RSN:               yes
+IP4.ADDRESS[1]:                         192.168.8.115/24
+IP4.GATEWAY:                            192.168.8.1
+IP4.ROUTE[1]:                           dst = 0.0.0.0/0, nh = 192.168.8.1, mt = 600
+IP4.ROUTE[2]:                           dst = 192.168.8.0/24, nh = 0.0.0.0, mt = 600
+IP4.DNS[1]:                             192.168.8.1
+DHCP4.OPTION[1]:                        dhcp_lease_time = 86400
+DHCP4.OPTION[2]:                        domain_name_servers = 192.168.8.1
+DHCP4.OPTION[3]:                        expiry = 1622622552
+DHCP4.OPTION[4]:                        ip_address = 192.168.8.115
+DHCP4.OPTION[5]:                        requested_broadcast_address = 1
+DHCP4.OPTION[6]:                        requested_domain_name = 1
+DHCP4.OPTION[7]:                        requested_domain_name_servers = 1
+DHCP4.OPTION[8]:                        requested_domain_search = 1
+DHCP4.OPTION[9]:                        requested_host_name = 1
+DHCP4.OPTION[10]:                       requested_interface_mtu = 1
+DHCP4.OPTION[11]:                       requested_ms_classless_static_routes = 1
+DHCP4.OPTION[12]:                       requested_nis_domain = 1
+DHCP4.OPTION[13]:                       requested_nis_servers = 1
+DHCP4.OPTION[14]:                       requested_ntp_servers = 1
+DHCP4.OPTION[15]:                       requested_rfc3442_classless_static_routes = 1
+DHCP4.OPTION[16]:                       requested_root_path = 1
+DHCP4.OPTION[17]:                       requested_routers = 1
+DHCP4.OPTION[18]:                       requested_static_routes = 1
+DHCP4.OPTION[19]:                       requested_subnet_mask = 1
+DHCP4.OPTION[20]:                       requested_time_offset = 1
+DHCP4.OPTION[21]:                       requested_wpad = 1
+DHCP4.OPTION[22]:                       routers = 192.168.8.1
+DHCP4.OPTION[23]:                       subnet_mask = 255.255.255.0
+IP6.ADDRESS[1]:                         fde2:73b8:1936:d100:2537:972c:e3c1:bb19/64
+IP6.ADDRESS[2]:                         fde2:73b8:1936:d100:1138:fd22:2e0b:2f11/64
+IP6.ADDRESS[3]:                         fe80::9ad:b8f5:2b61:c846/64
+IP6.GATEWAY:                            fe80::e073:b8ff:fe19:36d1
+IP6.ROUTE[1]:                           dst = fde2:73b8:1936:d100::/64, nh = ::, mt = 600
+IP6.ROUTE[2]:                           dst = ::/0, nh = fe80::e073:b8ff:fe19:36d1, mt = 20600
+IP6.ROUTE[3]:                           dst = ff00::/8, nh = ::, mt = 256, table=255
+IP6.ROUTE[4]:                           dst = fe80::/64, nh = ::, mt = 600
+IP6.DNS[1]:                             fe80::e073:b8ff:fe19:36d1
+DHCP6.OPTION[1]:                        dhcp6_name_servers = fe80::e073:b8ff:fe19:36d1
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: /org/freedesktop/NetworkManager/Settings/15
+CONNECTIONS.AVAILABLE-CONNECTIONS[1]:   c78a6e1d-702e-466a-9d90-405e1832187b | Auto Laptech
+
+GENERAL.DEVICE:                         br-0d46577a924e
+GENERAL.TYPE:                           bridge
+GENERAL.NM-TYPE:                        NMDeviceBridge
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/3
+GENERAL.VENDOR:                         --
+GENERAL.PRODUCT:                        --
+GENERAL.DRIVER:                         bridge
+GENERAL.DRIVER-VERSION:                 2.3
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         <MAC 'br-0d46577a924e' [IF2]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.REASON:                         0 (No reason given)
+GENERAL.IP4-CONNECTIVITY:               1 (none)
+GENERAL.IP6-CONNECTIVITY:               1 (none)
+GENERAL.UDI:                            /sys/devices/virtual/net/br-0d46577a924e
+GENERAL.IP-IFACE:                       br-0d46577a924e
+GENERAL.IS-SOFTWARE:                    yes
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     br-0d46577a924e
+GENERAL.CON-UUID:                       c0228a0d-64d3-440f-97dd-9c6eed27cb7b
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/1
+GENERAL.METERED:                        no (guessed)
+CAPABILITIES.CARRIER-DETECT:            yes
+CAPABILITIES.SPEED:                     unknown
+CAPABILITIES.IS-SOFTWARE:               yes
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     yes
+INTERFACE-FLAGS.LOWER-UP:               no
+INTERFACE-FLAGS.CARRIER:                no
+IP4.ADDRESS[1]:                         172.19.0.1/16
+IP4.GATEWAY:                            --
+IP4.ROUTE[1]:                           dst = 172.19.0.0/16, nh = 0.0.0.0, mt = 0
+IP4.ROUTE[2]:                           dst = 169.254.0.0/16, nh = 0.0.0.0, mt = 1000
+IP6.GATEWAY:                            --
+BRIDGE.SLAVES:                          --
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: /org/freedesktop/NetworkManager/Settings/10
+CONNECTIONS.AVAILABLE-CONNECTIONS[1]:   c0228a0d-64d3-440f-97dd-9c6eed27cb7b | br-0d46577a924e
+
+GENERAL.DEVICE:                         br-251040d8dec2
+GENERAL.TYPE:                           bridge
+GENERAL.NM-TYPE:                        NMDeviceBridge
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/4
+GENERAL.VENDOR:                         --
+GENERAL.PRODUCT:                        --
+GENERAL.DRIVER:                         bridge
+GENERAL.DRIVER-VERSION:                 2.3
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         <MAC 'br-251040d8dec2' [IF3]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.REASON:                         0 (No reason given)
+GENERAL.IP4-CONNECTIVITY:               1 (none)
+GENERAL.IP6-CONNECTIVITY:               1 (none)
+GENERAL.UDI:                            /sys/devices/virtual/net/br-251040d8dec2
+GENERAL.IP-IFACE:                       br-251040d8dec2
+GENERAL.IS-SOFTWARE:                    yes
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     br-251040d8dec2
+GENERAL.CON-UUID:                       735f5857-3ed1-40d1-a07b-1755fda61229
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/2
+GENERAL.METERED:                        no (guessed)
+CAPABILITIES.CARRIER-DETECT:            yes
+CAPABILITIES.SPEED:                     unknown
+CAPABILITIES.IS-SOFTWARE:               yes
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     yes
+INTERFACE-FLAGS.LOWER-UP:               no
+INTERFACE-FLAGS.CARRIER:                no
+IP4.ADDRESS[1]:                         172.21.0.1/16
+IP4.GATEWAY:                            --
+IP4.ROUTE[1]:                           dst = 172.21.0.0/16, nh = 0.0.0.0, mt = 0
+IP6.GATEWAY:                            --
+BRIDGE.SLAVES:                          --
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: /org/freedesktop/NetworkManager/Settings/11
+CONNECTIONS.AVAILABLE-CONNECTIONS[1]:   735f5857-3ed1-40d1-a07b-1755fda61229 | br-251040d8dec2
+
+GENERAL.DEVICE:                         br-7f3a9eb1e079
+GENERAL.TYPE:                           bridge
+GENERAL.NM-TYPE:                        NMDeviceBridge
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/5
+GENERAL.VENDOR:                         --
+GENERAL.PRODUCT:                        --
+GENERAL.DRIVER:                         bridge
+GENERAL.DRIVER-VERSION:                 2.3
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         <MAC 'br-7f3a9eb1e079' [IF4]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.REASON:                         0 (No reason given)
+GENERAL.IP4-CONNECTIVITY:               1 (none)
+GENERAL.IP6-CONNECTIVITY:               1 (none)
+GENERAL.UDI:                            /sys/devices/virtual/net/br-7f3a9eb1e079
+GENERAL.IP-IFACE:                       br-7f3a9eb1e079
+GENERAL.IS-SOFTWARE:                    yes
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     br-7f3a9eb1e079
+GENERAL.CON-UUID:                       e3393c82-a56e-42f6-befe-8df7e1a5efaf
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/3
+GENERAL.METERED:                        no (guessed)
+CAPABILITIES.CARRIER-DETECT:            yes
+CAPABILITIES.SPEED:                     unknown
+CAPABILITIES.IS-SOFTWARE:               yes
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     yes
+INTERFACE-FLAGS.LOWER-UP:               no
+INTERFACE-FLAGS.CARRIER:                no
+IP4.ADDRESS[1]:                         172.18.0.1/16
+IP4.GATEWAY:                            --
+IP4.ROUTE[1]:                           dst = 172.18.0.0/16, nh = 0.0.0.0, mt = 0
+IP6.GATEWAY:                            --
+BRIDGE.SLAVES:                          --
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: /org/freedesktop/NetworkManager/Settings/12
+CONNECTIONS.AVAILABLE-CONNECTIONS[1]:   e3393c82-a56e-42f6-befe-8df7e1a5efaf | br-7f3a9eb1e079
+
+GENERAL.DEVICE:                         br-95d06e0a912e
+GENERAL.TYPE:                           bridge
+GENERAL.NM-TYPE:                        NMDeviceBridge
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/6
+GENERAL.VENDOR:                         --
+GENERAL.PRODUCT:                        --
+GENERAL.DRIVER:                         bridge
+GENERAL.DRIVER-VERSION:                 2.3
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         <MAC 'br-95d06e0a912e' [IF5]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.REASON:                         0 (No reason given)
+GENERAL.IP4-CONNECTIVITY:               1 (none)
+GENERAL.IP6-CONNECTIVITY:               1 (none)
+GENERAL.UDI:                            /sys/devices/virtual/net/br-95d06e0a912e
+GENERAL.IP-IFACE:                       br-95d06e0a912e
+GENERAL.IS-SOFTWARE:                    yes
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     br-95d06e0a912e
+GENERAL.CON-UUID:                       97c4ba69-8bce-4744-97d1-d6eecc27e673
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/4
+GENERAL.METERED:                        no (guessed)
+CAPABILITIES.CARRIER-DETECT:            yes
+CAPABILITIES.SPEED:                     unknown
+CAPABILITIES.IS-SOFTWARE:               yes
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     yes
+INTERFACE-FLAGS.LOWER-UP:               no
+INTERFACE-FLAGS.CARRIER:                no
+IP4.ADDRESS[1]:                         172.20.0.1/16
+IP4.GATEWAY:                            --
+IP4.ROUTE[1]:                           dst = 172.20.0.0/16, nh = 0.0.0.0, mt = 0
+IP6.GATEWAY:                            --
+BRIDGE.SLAVES:                          --
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: /org/freedesktop/NetworkManager/Settings/13
+CONNECTIONS.AVAILABLE-CONNECTIONS[1]:   97c4ba69-8bce-4744-97d1-d6eecc27e673 | br-95d06e0a912e
+
+GENERAL.DEVICE:                         docker0
+GENERAL.TYPE:                           bridge
+GENERAL.NM-TYPE:                        NMDeviceBridge
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/7
+GENERAL.VENDOR:                         --
+GENERAL.PRODUCT:                        --
+GENERAL.DRIVER:                         bridge
+GENERAL.DRIVER-VERSION:                 2.3
+GENERAL.FIRMWARE-VERSION:               N/A
+GENERAL.HWADDR:                         <MAC 'docker0' [IF6]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          100 (connected)
+GENERAL.REASON:                         0 (No reason given)
+GENERAL.IP4-CONNECTIVITY:               1 (none)
+GENERAL.IP6-CONNECTIVITY:               1 (none)
+GENERAL.UDI:                            /sys/devices/virtual/net/docker0
+GENERAL.IP-IFACE:                       docker0
+GENERAL.IS-SOFTWARE:                    yes
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     docker0
+GENERAL.CON-UUID:                       d581fafc-3c45-4d1c-b954-b7ab8be145cb
+GENERAL.CON-PATH:                       /org/freedesktop/NetworkManager/ActiveConnection/5
+GENERAL.METERED:                        no (guessed)
+CAPABILITIES.CARRIER-DETECT:            yes
+CAPABILITIES.SPEED:                     unknown
+CAPABILITIES.IS-SOFTWARE:               yes
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     yes
+INTERFACE-FLAGS.LOWER-UP:               no
+INTERFACE-FLAGS.CARRIER:                no
+IP4.ADDRESS[1]:                         172.17.0.1/16
+IP4.GATEWAY:                            --
+IP4.ROUTE[1]:                           dst = 172.17.0.0/16, nh = 0.0.0.0, mt = 0
+IP6.GATEWAY:                            --
+BRIDGE.SLAVES:                          --
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: /org/freedesktop/NetworkManager/Settings/14
+CONNECTIONS.AVAILABLE-CONNECTIONS[1]:   d581fafc-3c45-4d1c-b954-b7ab8be145cb | docker0
+
+GENERAL.DEVICE:                         enp3s0
+GENERAL.TYPE:                           ethernet
+GENERAL.NM-TYPE:                        NMDeviceEthernet
+GENERAL.DBUS-PATH:                      /org/freedesktop/NetworkManager/Devices/2
+GENERAL.VENDOR:                         Realtek Semiconductor Co., Ltd.
+GENERAL.PRODUCT:                        RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller
+GENERAL.DRIVER:                         r8169
+GENERAL.DRIVER-VERSION:                 --
+GENERAL.FIRMWARE-VERSION:               --
+GENERAL.HWADDR:                         <MAC 'enp3s0' [IF1]>
+GENERAL.MTU:                            1500
+GENERAL.STATE:                          20 (unavailable)
+GENERAL.REASON:                         2 (Device is now managed)
+GENERAL.IP4-CONNECTIVITY:               1 (none)
+GENERAL.IP6-CONNECTIVITY:               1 (none)
+GENERAL.UDI:                            /sys/devices/pci0000:00/0000:00:1c.7/0000:03:00.0/net/enp3s0
+GENERAL.IP-IFACE:                       --
+GENERAL.IS-SOFTWARE:                    no
+GENERAL.NM-MANAGED:                     yes
+GENERAL.AUTOCONNECT:                    yes
+GENERAL.FIRMWARE-MISSING:               no
+GENERAL.NM-PLUGIN-MISSING:              no
+GENERAL.PHYS-PORT-ID:                   --
+GENERAL.CONNECTION:                     --
+GENERAL.CON-UUID:                       --
+GENERAL.CON-PATH:                       --
+GENERAL.METERED:                        unknown
+CAPABILITIES.CARRIER-DETECT:            yes
+CAPABILITIES.SPEED:                     unknown
+CAPABILITIES.IS-SOFTWARE:               no
+CAPABILITIES.SRIOV:                     no
+INTERFACE-FLAGS.UP:                     yes
+INTERFACE-FLAGS.LOWER-UP:               no
+INTERFACE-FLAGS.CARRIER:                no
+WIRED-PROPERTIES.CARRIER:               off
+CONNECTIONS.AVAILABLE-CONNECTION-PATHS: --
+
+SSID              BSSID              MODE   CHAN  FREQ      RATE        SIGNAL  BARS  SECURITY   ACTIVE  IN-USE 
+--                <MAC '' [AC3]>  Infra  5     2432 MHz  270 Mbit/s  95      ▂▄▆█  WPA2       no             
+Laptech           <MAC 'Laptech' [AC1]>  Infra  5     2432 MHz  270 Mbit/s  95      ▂▄▆█  WPA2       yes     *      
+cov86cfm          <MAC '' [AC3]>  Infra  5     2432 MHz  270 Mbit/s  82      ▂▄▆█  WPA2       no             
+HUAWEI-B525-4748  <MAC 'HUAWEI-B525-4748' [AC5]>  Infra  6     2437 MHz  270 Mbit/s  62      ▂▄▆_  WPA2       no             
+HUAWEI-210B       <MAC 'HUAWEI-210B' [AC11]>  Infra  12    2467 MHz  65 Mbit/s   62      ▂▄▆_  WPA2       no             
+RSBR              <MAC 'RSBR' [AC2]>  Infra  1     2412 MHz  270 Mbit/s  49      ▂▄__  WPA1 WPA2  no             
+@Hyatt_Staff      <MAC '@Hyatt_Staff ' [AC9]>  Infra  6     2437 MHz  130 Mbit/s  49      ▂▄__  WPA2       no             
+@Hyatt_WiFi       <MAC '@Hyatt_WiFi' [AC8]>  Infra  6     2437 MHz  130 Mbit/s  45      ▂▄__  --         no             
+mohara-wifi2      <MAC 'mohara-wifi2' [AC12]>  Infra  1     2412 MHz  270 Mbit/s  42      ▂▄__  WPA2       no             
+@Hyatt_Staff      <MAC '@Hyatt_Staff ' [AC6]>  Infra  6     2437 MHz  130 Mbit/s  35      ▂▄__  WPA2       no             
+@Hyatt_WiFi       <MAC '@Hyatt_WiFi' [AC7]>  Infra  6     2437 MHz  130 Mbit/s  35      ▂▄__  --         no             
+Nuraan            <MAC 'Nuraan ' [AC10]>  Infra  11    2462 MHz  270 Mbit/s  32      ▂▄__  WPA2       no             
+
+##### NetworkManager.state ##############
+
+[main]
+NetworkingEnabled=true
+WirelessEnabled=true
+WWANEnabled=true
+
+##### NetworkManager config #############
+
+[[/etc/NetworkManager/conf.d/default-wifi-powersave-on.conf]]
+[connection]
+wifi.powersave = 3
+
+[[/etc/NetworkManager/NetworkManager.conf]]
+[main]
+plugins=ifupdown,keyfile
+[ifupdown]
+managed=false
+[device]
+wifi.scan-rand-mac-address=no
+
+[[/usr/lib/NetworkManager/conf.d/10-dns-resolved.conf]]
+[main]
+dns=systemd-resolved
+
+[[/usr/lib/NetworkManager/conf.d/10-globally-managed-devices.conf]]
+[keyfile]
+unmanaged-devices=*,except:type:wifi,except:type:gsm,except:type:cdma
+
+[[/usr/lib/NetworkManager/conf.d/20-connectivity-ubuntu.conf]]
+[connectivity]
+uri=http://connectivity-check.ubuntu.com/
+
+[[/usr/lib/NetworkManager/conf.d/no-mac-addr-change.conf]]
+[device-mac-addr-change-wifi]
+match-device=driver:rtl8723bs,driver:rtl8189es,driver:r8188eu,driver:8188eu,driver:eagle_sdio,driver:wl
+wifi.scan-rand-mac-address=no
+
+##### NetworkManager profiles ###########
+
+[[/etc/NetworkManager/system-connections/Auto vlabs.nmconnection]] (600 root)
+[connection] id=Auto vlabs | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=vlabs
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/Auto wem615a.nmconnection]] (600 root)
+[connection] id=Auto wem615a | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=wem615a
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/Auto Laptech.nmconnection]] (600 root)
+[connection] id=Auto Laptech | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=Laptech
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/Auto Pretty Fly For A Wifi.nmconnection]] (600 root)
+[connection] id=Auto Pretty Fly For A Wifi | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=Pretty Fly For A Wifi
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/Auto vlabs-modem.nmconnection]] (600 root)
+[connection] id=Auto vlabs-modem | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=vlabs-modem
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/Auto Pretty Fly For A Wifi-41b9a722-ae8e-483f-85b5-87205649c3f7.nmconnection]] (600 root)
+[connection] id=Auto Pretty Fly For A Wifi | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=Pretty Fly For A Wifi
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/Auto UL-INT-WF1200.nmconnection]] (600 root)
+[connection] id=Auto UL-INT-WF1200 | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=UL-INT-WF1200
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/Auto DIRECT-1F-HP DeskJet 2700 series.nmconnection]] (600 root)
+[connection] id=Auto DIRECT-1F-HP DeskJet 2700 series | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=DIRECT-1F-HP DeskJet 2700 series
+[ipv4] method=auto
+[ipv6] method=auto
+
+[[/etc/NetworkManager/system-connections/Auto UL-INT-WF1200-4c1a567a-a7bf-4fe8-a09b-ee503fcb24cb.nmconnection]] (600 root)
+[connection] id=Auto UL-INT-WF1200 | type=wifi | permissions=
+[wifi] mac-address-blacklist= | ssid=UL-INT-WF1200
+[ipv4] method=auto
+[ipv6] method=auto
+
+##### Netplan config ####################
+
+[/etc/netplan/1-network-manager-all.yaml]
+network:
+  version: 2
+  renderer: NetworkManager
+
+##### iw reg get ########################
+
+Region: Africa/Johannesburg (based on set time zone)
+
+global
+country 00: DFS-UNSET
+	(2402 - 2472 @ 40), (N/A, 20), (N/A)
+	(2457 - 2482 @ 20), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+	(2474 - 2494 @ 20), (N/A, 20), (N/A), NO-OFDM, PASSIVE-SCAN
+	(5170 - 5250 @ 80), (N/A, 20), (N/A), AUTO-BW, PASSIVE-SCAN
+	(5250 - 5330 @ 80), (N/A, 20), (0 ms), DFS, AUTO-BW, PASSIVE-SCAN
+	(5490 - 5730 @ 160), (N/A, 20), (0 ms), DFS, PASSIVE-SCAN
+	(5735 - 5835 @ 80), (N/A, 20), (N/A), PASSIVE-SCAN
+	(57240 - 63720 @ 2160), (N/A, 0), (N/A)
+
+##### iwlist channels ###################
+
+enp3s0    no frequency information.
+
+br-95d06e0a912e  no frequency information.
+
+br-7f3a9eb1e079  no frequency information.
+
+docker0   no frequency information.
+
+br-251040d8dec2  no frequency information.
+
+lo        no frequency information.
+
+br-0d46577a924e  no frequency information.
+
+wlx<IF from MAC [IF7]>  14 channels in total; available frequencies :
+          Channel 01 : 2.412 GHz
+          Channel 02 : 2.417 GHz
+          Channel 03 : 2.422 GHz
+          Channel 04 : 2.427 GHz
+          Channel 05 : 2.432 GHz
+          Channel 06 : 2.437 GHz
+          Channel 07 : 2.442 GHz
+          Channel 08 : 2.447 GHz
+          Channel 09 : 2.452 GHz
+          Channel 10 : 2.457 GHz
+          Channel 11 : 2.462 GHz
+          Channel 12 : 2.467 GHz
+          Channel 13 : 2.472 GHz
+          Channel 14 : 2.484 GHz
+          Current Frequency=2.432 GHz (Channel 5)
+
+##### iwlist scan #######################
+
+enp3s0    Interface doesn't support scanning.
+
+br-95d06e0a912e  Interface doesn't support scanning.
+
+br-7f3a9eb1e079  Interface doesn't support scanning.
+
+docker0   Interface doesn't support scanning.
+
+br-251040d8dec2  Interface doesn't support scanning.
+
+lo        Interface doesn't support scanning.
+
+br-0d46577a924e  Interface doesn't support scanning.
+
+Channel occupancy:
+
+      2   APs on   Frequency:2.412 GHz (Channel 1)
+      3   APs on   Frequency:2.432 GHz (Channel 5)
+      5   APs on   Frequency:2.437 GHz (Channel 6)
+      1   APs on   Frequency:2.462 GHz (Channel 11)
+      1   APs on   Frequency:2.467 GHz (Channel 12)
+
+wlx<IF from MAC [IF7]>  Scan completed :
+          Cell 01 - Address: <MAC 'Laptech' [AC1]>
+                    Channel:5
+                    Frequency:2.432 GHz (Channel 5)
+                    Quality=53/70  Signal level=-57 dBm  
+                    Encryption key:on
+                    ESSID:"Laptech"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000008b0b3a134
+                    Extra: Last beacon: 84ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 02 - Address: <MAC 'RSBR' [AC2]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=37/70  Signal level=-73 dBm  
+                    Encryption key:on
+                    ESSID:"RSBR"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 9 Mb/s
+                              18 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 12 Mb/s; 24 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000008b1a1fa07
+                    Extra: Last beacon: 84ms ago
+                    IE: WPA Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : TKIP CCMP
+                        Authentication Suites (1) : PSK
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : TKIP CCMP
+                        Authentication Suites (1) : PSK
+          Cell 03 - Address: <MAC '' [AC3]>
+                    Channel:5
+                    Frequency:2.432 GHz (Channel 5)
+                    Quality=59/70  Signal level=-51 dBm  
+                    Encryption key:on
+                    ESSID:""
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000008b0d5d179
+                    Extra: Last beacon: 612ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 04 - Address: <MAC '' [AC3]>
+                    Channel:5
+                    Frequency:2.432 GHz (Channel 5)
+                    Quality=53/70  Signal level=-57 dBm  
+                    Encryption key:on
+                    ESSID:"cov86cfm"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000008b0b3b438
+                    Extra: Last beacon: 84ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 05 - Address: <MAC 'HUAWEI-B525-4748' [AC5]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=47/70  Signal level=-63 dBm  
+                    Encryption key:on
+                    ESSID:"HUAWEI-B525-4748"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000008b12d9db2
+                    Extra: Last beacon: 84ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 06 - Address: <MAC '@Hyatt_Staff ' [AC6]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=31/70  Signal level=-79 dBm  
+                    Encryption key:on
+                    ESSID:"@Hyatt_Staff "
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s
+                              36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000000277803236
+                    Extra: Last beacon: 8492ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 07 - Address: <MAC '@Hyatt_WiFi' [AC7]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=31/70  Signal level=-79 dBm  
+                    Encryption key:off
+                    ESSID:"@Hyatt_WiFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s
+                              36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000000277803791
+                    Extra: Last beacon: 8492ms ago
+          Cell 08 - Address: <MAC '@Hyatt_WiFi' [AC8]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=37/70  Signal level=-73 dBm  
+                    Encryption key:off
+                    ESSID:"@Hyatt_WiFi"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s
+                              36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000017e6b3053
+                    Extra: Last beacon: 8492ms ago
+          Cell 09 - Address: <MAC '@Hyatt_Staff ' [AC9]>
+                    Channel:6
+                    Frequency:2.437 GHz (Channel 6)
+                    Quality=39/70  Signal level=-71 dBm  
+                    Encryption key:on
+                    ESSID:"@Hyatt_Staff "
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 18 Mb/s; 24 Mb/s
+                              36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000017e6b354f
+                    Extra: Last beacon: 8492ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 10 - Address: <MAC 'Nuraan ' [AC10]>
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=31/70  Signal level=-79 dBm  
+                    Encryption key:on
+                    ESSID:"Nuraan "
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000008b0fa4f7f
+                    Extra: Last beacon: 84ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 11 - Address: <MAC 'HUAWEI-210B' [AC11]>
+                    Channel:12
+                    Frequency:2.467 GHz (Channel 12)
+                    Quality=41/70  Signal level=-69 dBm  
+                    Encryption key:on
+                    ESSID:"HUAWEI-210B"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000003335392e
+                    Extra: Last beacon: 800ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+          Cell 12 - Address: <MAC 'mohara-wifi2' [AC12]>
+                    Channel:1
+                    Frequency:2.412 GHz (Channel 1)
+                    Quality=35/70  Signal level=-75 dBm  
+                    Encryption key:on
+                    ESSID:"mohara-wifi2"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000001f874a01c
+                    Extra: Last beacon: 3892ms ago
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+
+##### module infos ######################
+
+[rt2800usb]
+filename:       /lib/modules/5.4.0-58-generic/kernel/drivers/net/wireless/ralink/rt2x00/rt2800usb.ko
+license:        GPL
+description:    Ralink RT2800 USB Wireless LAN driver.
+depends:        rt2x00lib,rt2800lib,rt2x00usb
+retpoline:      Y
+intree:         Y
+name:           rt2800usb
+vermagic:       5.4.0-58-generic SMP mod_unload 
+parm:           nohwcrypt:Disable hardware encryption. (bool)
+
+[rt2x00usb]
+filename:       /lib/modules/5.4.0-58-generic/kernel/drivers/net/wireless/ralink/rt2x00/rt2x00usb.ko
+license:        GPL
+description:    rt2x00 usb library
+depends:        rt2x00lib,mac80211
+retpoline:      Y
+intree:         Y
+name:           rt2x00usb
+vermagic:       5.4.0-58-generic SMP mod_unload 
+
+[rt2800lib]
+filename:       /lib/modules/5.4.0-58-generic/kernel/drivers/net/wireless/ralink/rt2x00/rt2800lib.ko
+license:        GPL
+description:    Ralink RT2800 library
+depends:        rt2x00lib,mac80211
+retpoline:      Y
+intree:         Y
+name:           rt2800lib
+vermagic:       5.4.0-58-generic SMP mod_unload 
+parm:           watchdog:Enable watchdog to detect tx/rx hangs and reset hardware if detected (bool)
+
+[rt2x00lib]
+filename:       /lib/modules/5.4.0-58-generic/kernel/drivers/net/wireless/ralink/rt2x00/rt2x00lib.ko
+license:        GPL
+description:    rt2x00 library
+depends:        mac80211,cfg80211
+retpoline:      Y
+intree:         Y
+name:           rt2x00lib
+vermagic:       5.4.0-58-generic SMP mod_unload 
+
+[mac80211]
+filename:       /lib/modules/5.4.0-58-generic/kernel/net/mac80211/mac80211.ko
+license:        GPL
+description:    IEEE 802.11 subsystem
+depends:        cfg80211,libarc4
+retpoline:      Y
+intree:         Y
+name:           mac80211
+vermagic:       5.4.0-58-generic SMP mod_unload 
+parm:           minstrel_vht_only:Use only VHT rates when VHT is supported by sta. (bool)
+parm:           max_nullfunc_tries:Maximum nullfunc tx tries before disconnecting (reason 4). (int)
+parm:           max_probe_tries:Maximum probe tries before disconnecting (reason 4). (int)
+parm:           beacon_loss_count:Number of beacon intervals before we decide beacon was lost. (int)
+parm:           probe_wait_ms:Maximum time(ms) to wait for probe response before disconnecting (reason 4). (int)
+parm:           ieee80211_default_rc_algo:Default rate control algorithm for mac80211 to use (charp)
+
+[cfg80211]
+filename:       /lib/modules/5.4.0-58-generic/kernel/net/wireless/cfg80211.ko
+description:    wireless configuration support
+license:        GPL
+depends:        
+retpoline:      Y
+intree:         Y
+name:           cfg80211
+vermagic:       5.4.0-58-generic SMP mod_unload 
+parm:           bss_entries_limit:limit to number of scan BSS entries (per wiphy, default 1000) (int)
+parm:           ieee80211_regdom:IEEE 802.11 regulatory domain code (charp)
+parm:           cfg80211_disable_40mhz_24ghz:Disable 40MHz support in the 2.4GHz band (bool)
+
+##### module parameters #################
+
+[rt2800usb]
+nohwcrypt: N
+
+[rt2800lib]
+watchdog: N
+
+[mac80211]
+beacon_loss_count: 7
+ieee80211_default_rc_algo: minstrel_ht
+max_nullfunc_tries: 2
+max_probe_tries: 5
+minstrel_vht_only: Y
+probe_wait_ms: 500
+
+[cfg80211]
+bss_entries_limit: 1000
+cfg80211_disable_40mhz_24ghz: N
+ieee80211_regdom: 00
+
+##### /etc/modules ######################
+
+##### modprobe options ##################
+
+[/etc/modprobe.d/amd64-microcode-blacklist.conf]
+blacklist microcode
+
+[/etc/modprobe.d/blacklist-ath_pci.conf]
+blacklist ath_pci
+
+[/etc/modprobe.d/blacklist.conf]
+blacklist evbug
+blacklist usbmouse
+blacklist usbkbd
+blacklist eepro100
+blacklist de4x5
+blacklist eth1394
+blacklist snd_intel8x0m
+blacklist snd_aw2
+blacklist prism54
+blacklist bcm43xx
+blacklist garmin_gps
+blacklist asus_acpi
+blacklist snd_pcsp
+blacklist pcspkr
+blacklist amd76x_edac
+
+[/etc/modprobe.d/blacklist-rare-network.conf]
+alias net-pf-3 off
+alias net-pf-6 off
+alias net-pf-9 off
+alias net-pf-11 off
+alias net-pf-12 off
+alias net-pf-19 off
+alias net-pf-21 off
+alias net-pf-36 off
+
+[/etc/modprobe.d/intel-microcode-blacklist.conf]
+blacklist microcode
+
+[/etc/modprobe.d/iwlwifi.conf]
+remove iwlwifi \
+(/sbin/lsmod | grep -o -e ^iwlmvm -e ^iwldvm -e ^iwlwifi | xargs /sbin/rmmod) \
+&& /sbin/modprobe -r mac80211
+
+##### rc.local ##########################
+
+grep: /etc/rc.local: No such file or directory
+
+##### pm-utils ##########################
+
+##### udev rules ########################
+
+##### dmesg #############################
+
+[ 1013.592415] ieee80211 phy0: rt2x00_set_rt: Info - RT chipset 3070, rev 0201 detected
+[ 1013.604826] ieee80211 phy0: rt2x00_set_rf: Info - RF chipset 0005 detected
+[ 1013.625218] rt2800usb 1-2:1.0 wlx<IF from MAC [IF7]>: renamed from wlan0
+[ 1013.654081] ieee80211 phy0: rt2x00lib_request_firmware: Info - Loading firmware file 'rt2870.bin'
+[ 1013.654348] ieee80211 phy0: rt2x00lib_request_firmware: Info - Firmware detected - version: 0.36
+[ 1049.044111] wlx<IF from MAC [IF7]>: authenticate with <MAC 'Laptech' [AC1]>
+[ 1049.054942] wlx<IF from MAC [IF7]>: send auth to <MAC 'Laptech' [AC1]> (try 1/3)
+[ 1049.071618] wlx<IF from MAC [IF7]>: authenticated
+[ 1049.073134] wlx<IF from MAC [IF7]>: associate with <MAC 'Laptech' [AC1]> (try 1/3)
+[ 1049.143907] wlx<IF from MAC [IF7]>: RX AssocResp from <MAC 'Laptech' [AC1]> (capab=0x1431 status=0 aid=6)
+[ 1049.147922] wlx<IF from MAC [IF7]>: associated
+[ 1049.215340] IPv6: ADDRCONF(NETDEV_CHANGE): wlx<IF from MAC [IF7]>: link becomes ready
+
+########## wireless info END ############
+
